@@ -1,11 +1,21 @@
 import { SIDEBAR_TOGGLED, WINDOW_RESIZE, COMPONENT_MOUNT } from '../actions/side_bar_actions';
 
 const defaultState = {
+  
+  //state determines if it is currently being displayed or not
   sidebarState: false,
+
+  //response determines if sidebar should open/close when screen is widened
   sidebarResponse: true,
+
+  //types are flex and overlay
+  //flex sits next to main content, overlay lies over content like a modal
   sidebarType: 'flex',
 };
 
+
+//if you are reading this file I encourage you to play around with the sidebar on blutube.herokuapp.com
+//and see how the sidebar behaves. It has strange and complex state management
 const SideBarReducer = (state = defaultState, action) => {
   switch(action.type) {
     case SIDEBAR_TOGGLED: {
@@ -40,6 +50,7 @@ const SideBarReducer = (state = defaultState, action) => {
       return state;
     }
     case COMPONENT_MOUNT: {
+      //when video watching page or video upload form mount turn off sidebar
       const newSideBarState = !['video_show', 'video_form'].includes(action.component) && window.innerWidth >= 1277;
       return Object.assign({}, state, { sidebarState: newSideBarState });
     }

@@ -56,7 +56,6 @@ class App extends React.Component {
     const { sidebarState, location, sidebarType } = this.props;
     const notSessionPath = !['/login', '/signup'].includes(location.pathname);
     const notVideoPath = !location.pathname.includes('/videos/') && !location.pathname.includes('/upload');
-    // debugger
     const sidebar1On = sidebarState && (!notVideoPath || sidebarType === 'overlay');
     const mainContent = (
       <Switch>
@@ -83,12 +82,14 @@ class App extends React.Component {
           </header>
         ) : (null)}
 
+          //this segment of code determines how the sidebar is being rendered
           <div className="with-side-bar-flexed">
             { sidebarType === 'flex' && notSessionPath ?
               <SideBar2 visible={ sidebarState && notVideoPath } /> :
                 null
             }
             { notSessionPath ? <SideBar1 visible={ sidebar1On } /> : null }
+            //a model like background closing the sidebar when clicked
               <div onClick={() => this.onOverlayClick(sidebar1On)} className={"side-bar-overlay" + (sidebar1On ? " side-bar-overlay-on" : "")}></div>
             { mainContent }
           </div>
