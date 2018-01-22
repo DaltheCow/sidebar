@@ -1,0 +1,141 @@
+.sidebar {
+  width: 0;
+  height: 100vh;
+  -webkit-transition: width 0.25s, left 0.25s;
+  -moz-transition: width 0.25s, left 0.25s;
+  transition: width 0.25s, left 0.25s;
+  background-color: white;
+}
+
+.sidebar.sidebar-on {
+  min-width: 240px;
+  max-width: 240px;
+}
+
+.sidebar-component {
+  position: absolute;
+}
+
+.sidebar-parent {
+  position: relative;
+}
+
+.with-side-bar-flexed {
+  display: flex;
+}
+
+.sidebar {
+  min-width: 240px;
+  max-width: 240px;
+  height: 100vh;
+  background: 'white';
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.sidebar-1 {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  z-index: 2000;
+  -webkit-transition: left 0.25s;
+  -moz-transition: left 0.25s;
+  transition: left 0.25s;
+}
+
+.sidebar-1-on {
+  left: 0;
+}
+
+.sidebar-btns {
+  margin-top: 24px;
+}
+
+.sidebar-btn {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.sidebar-btn:hover {
+  cursor: pointer;
+}
+
+.sidebar-btn i {
+  color: #888;
+  font-size: 20px;
+  margin-right: 27px;
+}
+
+.sidebar-btn span {
+  font-size: 13px;
+  margin-right: 24px;
+}
+
+.selected i {
+  color: red;
+}
+
+.selected span {
+  font-weight: 500;
+}
+
+
+.sidebar-subs-header {
+  padding: 8px 24px;
+  font-size: .9rem;
+  font-weight: 500;
+  color: #777;
+  margin-top: 24px;
+}
+
+.sidebar-sub-link {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-sub .profile-image {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  background: white;
+  display: flex;
+  justify-content: center;
+  margin-right: 14px;
+}
+
+.sidebar-sub .profile-image img {
+  height: 24px;
+}
+
+.sidebar-channel-name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: .9rem;
+}
+
+.sidebar-sub {
+  padding: 0 24px;
+  height: 40px;
+}
+
+.side-bar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -moz-transition: opacity .25s;
+  -webkit-transition: opacity .25s;
+  transition: opacity .25s;
+  background: black;
+  z-index: -10;
+}
+
+.side-bar-overlay-on {
+  opacity: .5;
+  z-index: 1500;
+}
